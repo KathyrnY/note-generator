@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const util = require('util');
+const path = require("path");
 
 const app = express();
 const PORT = 3001;
@@ -10,7 +11,7 @@ const asyncWrite = util.promisify(fs.writeFile);
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/api/notes", async (req, res, next) => {
     try {
@@ -37,12 +38,12 @@ app.get("/api/notes", async (req, res, next) => {
 
 // created route to index html
 app.get("/", (req, res) => {
-    res.sendFile(`${__dirname}/Develop/public/index.html`);
+    res.sendFile(path.join(_dirname, "./Develop/public/index.html"));
 });
 
 // route to notes html
 app.get("/notes", (req, res) => {
-    res.sendFile(`${__dirname}/Develop/public/notes.html`)
+    res.sendFile(path.join(_dirname, "./Develop/public/notes.html"));
 });
 
 // This is a middleware error handling
