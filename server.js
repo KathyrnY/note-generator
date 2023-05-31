@@ -11,11 +11,11 @@ const asyncWrite = util.promisify(fs.writeFile);
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "./Develop/public")));
 
 app.get("/api/notes", async (req, res, next) => {
     try {
-      const data = await asyncRead("./db/db.json", "utf-8");
+      const data = await asyncRead("./Develop/db/db.json", "utf-8");
       res.send(data);
     } catch (err) {
       next(err); // This will pass the error to the error-handling middleware
@@ -25,11 +25,11 @@ app.get("/api/notes", async (req, res, next) => {
   app.post("/api/notes", async (req, res, next) => {
     const note = req.body;
     try {
-      const data = await asyncRead("./db/db.json", "utf-8");
+      const data = await asyncRead("./Develop/db/db.json", "utf-8");
       const notes = JSON.parse(data);
       note.id = notes.length + 1;
       notes.push(note);
-      await asyncWrite("./db/db.json", JSON.stringify(notes));
+      await asyncWrite("./Develop/db/db.json", JSON.stringify(notes));
       res.sendStatus(200);
     } catch (err) {
       next(err);
@@ -38,12 +38,12 @@ app.get("/api/notes", async (req, res, next) => {
 
 // created route to index html
 app.get("/", (req, res) => {
-    res.sendFile(path.join(_dirname, "./Develop/public/index.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/index.html"));
 });
 
 // route to notes html
 app.get("/notes", (req, res) => {
-    res.sendFile(path.join(_dirname, "./Develop/public/notes.html"));
+    res.sendFile(path.join(__dirname, "./Develop/public/notes.html"));
 });
 
 // This is a middleware error handling
