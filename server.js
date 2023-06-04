@@ -37,9 +37,14 @@ app.get("/api/notes", async (req, res, next) => {
   });
   app.delete("/api/notes/:id", async (req, res, next) => {
     try {
-    const idDelteNote = parseInt(req.params.id);
+    const data = await asyncRead("./Develop/db/db.json", "utf-8");
+    const idDeleteNote = parseInt(req.params.id);
     const notes = JSON.parse(data);
-
+    const updatedNotes = notes.filter((note) => note.id !== idDeleteNote);
+    await asyncWrite("./Develop/db/db.json", JSON.stringify(updatedNotes));
+    res.sendStatus(200);
+  } catch (err) {
+    next(err);
     }
   })
 
