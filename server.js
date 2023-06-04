@@ -35,6 +35,13 @@ app.get("/api/notes", async (req, res, next) => {
       next(err);
     }
   });
+  app.delete("/api/notes/:id", async (req, res, next) => {
+    try {
+    const idDelteNote = parseInt(req.params.id);
+    const notes = JSON.parse(data);
+
+    }
+  })
 
 // created route to index html
 app.get("/", (req, res) => {
