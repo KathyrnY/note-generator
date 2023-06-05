@@ -46,11 +46,7 @@ For more information, please visit [MIT](https://opensource.org/licenses/MIT/).
  
   ## Questions
 
-  KathyrnY
-
   https://github.com/KathyrnY
 
   kathyrnyoung7890@gmail.com
-
-  No questions
 
