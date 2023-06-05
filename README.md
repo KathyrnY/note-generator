@@ -26,6 +26,7 @@ The note taker generator requires a title and text for the note you want to crea
 
   ## Link
   
+https://note-taker-generator78.herokuapp.com/
 
   ## Visual
 
