@@ -6,7 +6,7 @@
 
   ## Description
 
-The note taker generator requires a title and text for the note you want to create. It helps remove the daily burden task of remembering things and allows you to quickly create notes with a simple layout in order to proirtoize what's most important in life. You will have the option to view passed saved notes and also delete any notes you no longer need. 
+The note taker generator requires a title and text for the note you want to create. It helps remove the daily burden task of remembering things and allows you to quickly create notes with a simple layout in order to prioritize what's most important in life. You will have the option to view passed saved notes and also delete any notes you no longer need. 
 
   ## Table of Contents 
 
