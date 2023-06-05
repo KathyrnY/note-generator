@@ -4,7 +4,7 @@ const util = require('util');
 const path = require("path");
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const asyncRead = util.promisify(fs.readFile);
 const asyncWrite = util.promisify(fs.writeFile);
