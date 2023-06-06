@@ -30,7 +30,7 @@ https://note-taker-generator78.herokuapp.com/
 
   ## Visual
 
-
+[Untitled_ Jun 5, 2023 9_45 PM.webm](https://github.com/KathyrnY/note-generator/assets/127566404/47824f1e-3766-47e8-8f3c-305632f5a486)
   
   ## Credits
   
